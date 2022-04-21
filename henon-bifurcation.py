@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from henon import update_x, update_y
+from henon import update_coords
 
 iter = 1000
 b = 0.3
@@ -13,8 +13,7 @@ for j in range(len(a)):
     y = 0
     c = 0
     for i in range(iter):
-        x_new = update_x(x, y, a[j])
-        y_new = update_y(x, b)
+        x_new, y_new = update_coords(x, y, a[j], b)
         if i >= iter - N:
             x_arr[c] = x_new
             c += 1
